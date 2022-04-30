@@ -7,4 +7,4 @@ if (a==4) Console.WriteLine("Четверг ");
 if (a==5) Console.WriteLine("Пятница ");
 if (a==6) Console.WriteLine("Суббота ");
 if (a==7) Console.WriteLine("Воскресенье ");
-else Console.WriteLine(" День недели за гранью существующих ");
+if (a > 7 || a < 1) Console.WriteLine("День недели c таким номером не существует ");
