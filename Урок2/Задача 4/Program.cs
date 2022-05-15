@@ -1,11 +1,5 @@
 ﻿// Найти расстояние между точками в пространстве 2D/3D
 
-// (x2-x1)*(x2-x1)+(y2-y1)*y2-y1)+(z2-z1)*(z2-z1)
-// Console.Write(Math.Sqrt(x)) - корень из x
-// distance = Math.Sqrt(Math.Pow(x2 - x1, 2) + Math.Pow(y2 - y1, 2) + Math.Pow(z2 - z1, 2));
-// Point2D = Math.Sqrt(Math.Pow(x2 - x1, 2) + Math.Pow(y2 - y1, 2));
-// Point3D = Math.Sqrt(Math.Pow(x2 - x1, 2) + Math.Pow(y2 - y1, 2) + Math.Pow(z2 - z1, 2));
-
 Console.WriteLine("Введите значение координат первой точки в 3D");
 Console.WriteLine("Введите значение x1 = ");
 double x1 = double.Parse(Console.ReadLine());
