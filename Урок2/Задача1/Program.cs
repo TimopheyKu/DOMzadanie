@@ -1,0 +1,10 @@
+﻿Console.WriteLine("Введите число");
+int day = int.Parse(Console.ReadLine());
+if (day == 1) Console.WriteLine("Это число обозначает Понедельник");
+else if (day == 2) Console.WriteLine("Это число обозначает Вторник");
+else if (day == 3) Console.WriteLine("Это число обозначает Среда");
+else if (day == 4) Console.WriteLine("Это число обозначает Четверг");
+else if (day == 5) Console.WriteLine("Это число обозначает Пятница");
+else if (day == 6) Console.WriteLine("Это число обозначает Суббота. Это выходной день");
+else if (day == 7) Console.WriteLine("Это число обозначает Воскресенье. Это выходной день");
+else Console.WriteLine("Такого номера, обозначающего день недели нет");
