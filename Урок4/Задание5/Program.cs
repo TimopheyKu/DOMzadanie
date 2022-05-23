@@ -13,8 +13,7 @@ Console.WriteLine();
 
 int pow = 0;
 int size = array.Length;
-int last = array[size-1];
- for (int i = 0; i < array.Length/2; i++)
+for (int i = 0; i < array.Length/2; i++)
  {
     pow = array[i]*array[size-1];
     size--;
