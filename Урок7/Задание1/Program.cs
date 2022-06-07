@@ -16,8 +16,8 @@ int[] tempmas = new int[4];
 for (int i = 0, j = 0, k = 0; j < 4; j++, k++) // Занесли первую строки в пустой массив
 {
     tempmas[k] = matrix[i, j];
-    matrix[0, j] = matrix[3, j]; // Заменяем минимальную строку максимальной
-    matrix[3, j] = tempmas[j];   // Заменяем максимальную строку минимальной
+    matrix[0, j] = matrix[3, j]; // Заменяем первую строку в последнюю
+    matrix[3, j] = tempmas[j];   // Заменяем последнюю строку в первую
 }
 
 Console.WriteLine();
