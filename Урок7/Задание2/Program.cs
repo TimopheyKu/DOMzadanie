@@ -24,19 +24,19 @@ void FillArray(int[,] matr)
     }
 }
 
-void CorrectArray(int[,] matr)
+void SortNumber(int[,] matr)
 {
-    for (int i = 0; i < matr.GetLength(0); i++) 
+    int[] temp = new int[matr.GetLength(1)];
+    for (int i = 0; i < matr.GetLength(0); i++)
     {
-        for (int j = 0; j < matr.GetLength(1); j++) 
+        for (int j = 0; j < matr.GetLength(1); j++)
         {
-            int minnumber = matr[i, j];
-            if (matr[i, j] < minnumber) 
-            {
-                int tmp = matr[i, j];
-                matr[i, j] = minnumber;
-                minnumber = tmp;
-            }
+            temp[j] =  matr[i,j];
+        }
+        Array.Sort(temp);
+        for (int k = 0; k < matr.GetLength(1); k++)
+        {
+            matr[i, k] = temp[k];
         }
     }
 }
@@ -48,5 +48,6 @@ FillArray(matrix);
 Console.WriteLine();
 PrintArray(matrix);
 Console.WriteLine();
-CorrectArray (matrix);
+SortNumber(matrix);
+//ChangeNumber(matrix);
 PrintArray(matrix);
