@@ -1,52 +1,42 @@
 ﻿// Написать программу, которая в двумерном массиве заменяет строки на столбцы или сообщить, что это невозможно 
 // (в случае, если матрица не квадратная).
 
-void PrintArray(int[,] matr)
+Console.Clear();
+Console.WriteLine("Введите первое число");
+int num1 = int.Parse(Console.ReadLine() ?? "0");
+Console.WriteLine("Введите второе число");
+int num2 = int.Parse(Console.ReadLine() ?? "0");
+int[,] matrix = new int[num1, num2];
+for (int i = 0; i < matrix.GetLength(0); i++)
 {
-    for (int i = 0; i < matr.GetLength(0); i++) //  0 это 3 из [3,4]
+    for (int j = 0; j < matrix.GetLength(1); j++)
     {
-        for (int j = 0; j < matr.GetLength(1); j++) //  - 1 это 4 из [3,4]
-        {
-            Console.Write($"{matr[i, j]} ");
-        }
-        Console.WriteLine();
-
+        matrix[i, j] = new Random().Next(1, 10);
+        Console.Write(matrix[i, j] + " ");
     }
+    Console.WriteLine();
 }
 
-void FillArray(int[,] matr)
+int temp = 0;
+for (int i = 0; i < matrix.GetLength(0); i++)
 {
-    for (int i = 0; i < matr.GetLength(0); i++) 
+    for (int j = i + 1; j < matrix.GetLength(1); j++)
     {
-        for (int j = 0; j < matr.GetLength(1); j++) 
+        if (num1 == num2)
         {
-            matr[i, j] = new Random().Next(1, 10);
-        }
-    }
-}
-
-void ChangeColumnLine (int[,] matr)
-{
-    for (int i = 0; i < matr.GetLength(0); i++) 
-    {
-        for (int j = 0; j < matr.GetLength(1); j++) 
-        {
-            if (i == j)
-            {
-                int tmp = matr[i,j];
-                matr[i,j] = matr[j,i];
-                matr[j,i] = tmp;
-            }
-            else Console.WriteLine("матрица не квадратная");
-            break;
+            temp = matrix[i, j];
+            matrix[i, j] = matrix[j, i];
+            matrix[j, i] = temp;
         }
     }
 }
-int[,] matrix = new int[4, 4];
-
-FillArray(matrix);
+if (num1 != num2) Console.WriteLine("массив не квадратный, замена невозможна");
 Console.WriteLine();
-PrintArray(matrix);
-Console.WriteLine();
-ChangeColumnLine(matrix);
-PrintArray(matrix);
+for (int i = 0; i < matrix.GetLength(0); i++)
+{
+    for (int j = 0; j < matrix.GetLength(1); j++)
+    {
+        Console.Write(matrix[i, j] + " ");
+    }
+    Console.WriteLine();
+}
